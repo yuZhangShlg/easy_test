@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <script>
+        function myFunction() {
+            alert(!$("#user").val());
+        }
+    </script>
+    <script>
+        var arr = ['Microsoft', 'Apple', 'Yahoo', 'AOL', 'Excite', 'Oracle'];
+        // alert(arr.splice(2,3,'Google','Facebook'));
+        // alert(arr)
+        // alert(arr.join('-'))
+
+        var arr1 = [[1, 2, 3], [400, 500, 600], '-'];
+
+        var xiaoming = {
+            name: '小明',
+            birth: 1990,
+            school: 'No.1 Middle School',
+            height: 1.70,
+            weight: 65,
+            score: null
+        };
+        // alert(xiaoming['name']);
+        xiaoming['middle-school'] = 'No.1 middle school';
+        //a lert(xiaoming['middle-school'])
+
+        var m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+        // alert(m.get('Michael'))
+
+        var s = new Set([1, 2, 3, 3, '3']);
+/*
+        for (var x of s){
+            alert(x);
+        }
+*/
+        // console.log(s)
+
+        /*var a = ['A', 'B', 'C'];
+        a.name = 'Hello';
+        for (var x in a) {
+            console.log(x); // '0', '1', '2', 'name'
+        }
+        for (var x of a) {
+            console.log(x); // '0', '1', '2', 'name'
+        }*/
+/*        var s = new Set(['A', 'B', 'C']);
+        s.forEach(function (element) {
+            console.log(element);
+        });*/
+        // S = {'A':1};
+        // alert(S.A)
+        /*function check(str){
+            return /^[a-z0-9]+$/.test(str);
+        }*/
+        // reduce filter map sort 函数的使用
+        function pow1(x){
+            return x*x;
+        }
+        arr = [1,2,3,4,5,6,7,8,9];
+        new_arr1 = arr.map(pow1);
+        console.log(new_arr1);
+
+        function pow2(x,y){
+            return x*y;
+        }
+        new_arr2 = arr.reduce(pow2);
+        console.log(new_arr2);
+
+        var arr3 = ['A','',null,'',undefined,''];
+        var r = arr3.filter(function(s){
+            return s && s.trim();
+        });
+        console.log(r);
+
+        //fliter实现去重
+        arr4 = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+        var r = arr4.filter(function(element,index,self){
+            return self.indexOf(element) === index;
+        });
+        console.log(r);
+
+        var now_time = new Date();
+        console.log(now_time);
+        console.log(now_time.getFullYear());
+        console.log(now_time.getDate());
+        console.log(now_time.getMonth());
+        console.log(now_time.getDay());
+        console.log(now_time.getHours());
+        console.log(now_time.getMinutes());
+        console.log(now_time.getSeconds());
+        console.log(now_time.getTime());
+
+    </script>
+</head>
+
+<body>
+
+User:<input id="user" type="text" name="user"><br />
+<input type="button" value="click" onclick="myFunction()">
+
+</body>
+</html>

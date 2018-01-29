@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+
+    <script>
+        function get_info(){
+            var elements = $('#email_info').val();
+            return elements;
+        }
+
+        function check_info() {     //比较表单信息并输出对应的响应
+            var elements = get_info();
+            elements = elements.trim();
+            if (elements.toLowerCase() == ""){
+                alert("请勿输入空值")
+            }
+            else if(elements.substr(0,4).toLowerCase() == "git@"){
+                alert("输入git@git.zhaogangren.com:后面的值");
+            }
+            else if(elements.substr(0,4).toLowerCase() == "http" ){
+                alert("请使用以git@开头的形式");
+            }
+            else{
+                alert("OK");
+            }
+        }
+    </script>
+</head>
+
+<body>
+Email：<input id="email_info" type="text" name="user" /><br />
+<input type="button" value="提交" onClick="check_info()">
+</body>
+
+</html>
