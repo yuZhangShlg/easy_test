@@ -1,0 +1,113 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <script>
+        function myFunction() {
+            alert(!$("#user").val());
+        }
+    </script>
+</head>
+
+<body>
+User:<input id="user" type="text" name="user"><br />
+<input type="button" value="click" onclick="myFunction()">
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body>
+<button id="user" type="reset">解锁</button>
+</body>
+
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <script>
+        $("#user").click(function(){
+            alert("点击");
+        });
+    </script>
+</html>
+
+<!--简单的例子：当点击div后，我们将一个div隐藏。-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color: #8ad6ff;
+        }
+    </style>
+</head>
+<body>
+<div>点击div，隐藏此div</div>
+</body>
+</html>
+
+<!--当去除$(document).ready(function() {});时，不能够隐藏显示-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <script>
+         $("div").click(function(){
+             $(this).hide();
+        });
+    </script>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color: #8ad6ff;
+        }
+    </style>
+</head>
+<body>
+<div>点击div，隐藏此div</div>
+</body>
+</html>
+
+<!--将script放在最后就可以显示-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../static/jquery-3.2.1.min.js"></script>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color: #8ad6ff;
+        }
+    </style>
+</head>
+<body>
+    <div>点击div，隐藏此div</div>
+</body>
+<script>
+     $("div").click(function(){
+     $(this).hide();
+     });
+</script>
+</html>
